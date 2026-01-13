@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="az">
 <head>
-    <title>Mənim İlk Saytım</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f4f4f4; }
-        h1 { color: #333; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Market - Digital Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Vercel Saytım Artıq Hazırdır! AY İNSAN</h1>
-    <p>Bu mətni dəyişərək saytını redaktə edə bilərsən.</p>
+
+    <nav>
+        <div class="logo"><h2>NEON<span>.</span></h2></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Account</a>
+            <button id="theme-toggle">🌓</button>
+        </div>
+        <div class="right-menu">
+            <select id="currency-select">
+                <option value="AZN">₼ AZN</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="neon-divider"></div>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Digital Marketplace</h1>
+            <p>Premium rəqəmsal məhsullar və assetlər.</p>
+        </section>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"></div>
+                <h3>Modern UI Kit</h3>
+                <p>Clean & Smooth design</p>
+                <div class="price-container">
+                    <span class="price" data-base-price="15">15.00 ₼</span>
+                </div>
+                <a href="#" class="buy-btn">Satın Al</a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img"></div>
+                <h3>E-Book Guide</h3>
+                <p>Learn everything fast</p>
+                <div class="price-container">
+                    <span class="price" data-base-price="25">25.00 ₼</span>
+                </div>
+                <a href="#" class="buy-btn">Satın Al</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
