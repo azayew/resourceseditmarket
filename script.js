@@ -1,28 +1,31 @@
-// Tema Dəyişdirmə (Light/Dark Mode)
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
+// # TEMA DƏYİŞDİRMƏ FUNKSİYASI
+const themeBtn = document.getElementById('theme-btn');
+themeBtn.addEventListener('click', () => {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', newTheme);
 });
 
-// Valyuta Dəyişməsi
-const currencySelect = document.getElementById('currency-select');
-const prices = document.querySelectorAll('.price');
+// # VALYUTA DƏYİŞDİRMƏ VƏ HESABLAMA
+const currencySelector = document.getElementById('currency-selector');
+const prices = document.querySelectorAll('.price-tag');
 
+// # MƏZƏNNƏLƏR (BURADAN DƏYİŞƏ BİLƏRSƏN)
 const rates = {
-    AZN: { rate: 1, symbol: '₼' },
-    USD: { rate: 0.59, symbol: '$' },
-    EUR: { rate: 0.54, symbol: '€' }
+    AZN: { symbol: '₼', val: 1 },
+    USD: { symbol: '$', val: 0.59 },
+    EUR: { symbol: '€', val: 0.54 }
 };
 
-currencySelect.addEventListener('change', (e) => {
+currencySelector.addEventListener('change', (e) => {
     const selected = e.target.value;
-    const { rate, symbol } = rates[selected];
+    const symbol = rates[selected].symbol;
+    const rate = rates[selected].val;
 
-    prices.forEach(priceSpan => {
-        const basePrice = parseFloat(priceSpan.getAttribute('data-base-price'));
-        const newPrice = (basePrice * rate).toFixed(2);
-        priceSpan.innerText = `${newPrice} ${symbol}`;
+    prices.forEach(el => {
+        const base = el.getAttribute('data-base');
+        const converted = (base * rate).toFixed(2);
+        el.innerText = `${converted} ${symbol}`;
     });
 });

@@ -3,59 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Market - Digital Products</title>
+    <title>JRY Media Style Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-theme="dark">
 
-    <nav>
-        <div class="logo"><h2>NEON<span>.</span></h2></div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Account</a>
-            <button id="theme-toggle">🌓</button>
-        </div>
-        <div class="right-menu">
-            <select id="currency-select">
-                <option value="AZN">₼ AZN</option>
-                <option value="USD">$ USD</option>
-                <option value="EUR">€ EUR</option>
-            </select>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">JRY<span>STORE</span></div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#account">Account</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <select id="currency-selector" class="currency-dropdown">
+                    <option value="AZN">₼ AZN</option>
+                    <option value="USD">$ USD</option>
+                    <option value="EUR">€ EUR</option>
+                </select>
+                <button id="theme-btn" class="icon-btn">🌓</button>
+            </div>
         </div>
     </nav>
 
-    <div class="neon-divider"></div>
+    <div class="neon-separator"></div>
 
-    <div class="container">
-        <section class="hero">
-            <h1>Digital Marketplace</h1>
-            <p>Premium rəqəmsal məhsullar və assetlər.</p>
-        </section>
+    <main class="container">
+        <header class="hero-section">
+            <h1>Premium Digital Assets</h1>
+            <p>Dizaynlarınızı və layihələrinizi növbəti səviyyəyə daşıyın.</p>
+        </header>
 
-        <div class="products-grid">
+        <div class="products-grid" id="products">
+            
             <div class="product-card">
-                <div class="product-img"></div>
-                <h3>Modern UI Kit</h3>
-                <p>Clean & Smooth design</p>
-                <div class="price-container">
-                    <span class="price" data-base-price="15">15.00 ₼</span>
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image-placeholder"></div>
+                <div class="product-info">
+                    <h3>Premium Editing Pack</h3>
+                    <p>Smoothing effects, transitions & more.</p>
+                    <div class="product-footer">
+                        <span class="price-tag" data-base="20">20.00 ₼</span>
+                        <button class="buy-now">Buy Now</button>
+                    </div>
                 </div>
-                <a href="#" class="buy-btn">Satın Al</a>
             </div>
 
             <div class="product-card">
-                <div class="product-img"></div>
-                <h3>E-Book Guide</h3>
-                <p>Learn everything fast</p>
-                <div class="price-container">
-                    <span class="price" data-base-price="25">25.00 ₼</span>
+                <div class="product-image-placeholder"></div>
+                <div class="product-info">
+                    <h3>Overlay Bundle</h3>
+                    <p>4K high quality texture overlays.</p>
+                    <div class="product-footer">
+                        <span class="price-tag" data-base="35">35.00 ₼</span>
+                        <button class="buy-now">Buy Now</button>
+                    </div>
                 </div>
-                <a href="#" class="buy-btn">Satın Al</a>
             </div>
+
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
